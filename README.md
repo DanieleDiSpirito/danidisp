@@ -21,7 +21,7 @@
   b'\x00\x00\x00\x00'
   ```
 
-- #### DLOG (Discrete logarithm)
+- #### Discrete logarithm
 
   ```
   dlog(n: int, b: int, mod: int) -> int
@@ -35,6 +35,22 @@
   372
   >>> logdis(372, 2, 2093)
   123
+  ```
+
+- #### Base Converter
+
+  ```
+  base_conv(n: str, bs: int = 10, be: int = 10) -> str
+  ```
+
+  #### Usage
+  ```
+  from danidisp import base_conv
+  
+  >>> base_conv('44', 5, 8)
+  '30'
+  >>> base_conv('30', 8, 5)
+  '44'
   ```
 
 - other functions will appear soon...
