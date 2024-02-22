@@ -7,28 +7,28 @@
 
 ### Functions
 
-- #### XOR
+- ### XOR
 
-  ```
+  ```py
   xor(a: bytes, b: bytes) -> bytes
   ```
   #### Usage
 
-  ``` 
+  ```py
   from danidisp import xor
   
   >>> print(xor(b'Ciao', b'Ciao')) 
   b'\x00\x00\x00\x00'
   ```
 
-- #### Discrete logarithm
+- ### Discrete logarithm
 
-  ```
+  ```py
   dlog(n: int, b: int, mod: int) -> int
   ```
 
   #### Usage
-  ```
+  ```py
   from danidisp import dlog
   
   >>> pow(2, 123, 2093)
@@ -37,20 +37,39 @@
   123
   ```
 
-- #### Base Converter
+- ### Base Converter
 
-  ```
+  ```py
   base_conv(n: str, bs: int = 10, be: int = 10) -> str
   ```
 
   #### Usage
-  ```
+  ```py
   from danidisp import base_conv
   
   >>> base_conv('44', 5, 8)
   '30'
   >>> base_conv('30', 8, 5)
   '44'
+  ```
+
+- ### Clock
+  
+  ```py
+  @clock
+  def func(*param) -> Optional[any]:
+    # something...
+  ```
+
+  #### Usage
+  ```py
+  from danidisp import clock
+  
+  @clock
+  def func():
+    # something to do
+  ...
+  func() # 0.1235s <- time to execute func
   ```
 
 - other functions will appear soon...

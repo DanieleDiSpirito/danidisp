@@ -1,3 +1,5 @@
+from time import perf_counter
+
 def xor(a: bytes, b: bytes) -> bytes:
     return bytes([x^y for x,y in zip(a,b)])
 
@@ -37,3 +39,11 @@ def base_conv(n: str, bs: int = 10, be: int = 10) -> str:
         return str(res)
     else:
         return base_conv(base_conv(n, bs, 10), 10, be)
+    
+def clock(func):
+	def _clock():
+		start = perf_counter()
+		func()
+		end = perf_counter()
+		print('{0:.8f}'.format(end-start))
+	return _clock
