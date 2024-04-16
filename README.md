@@ -1,6 +1,6 @@
 # danidisp
 ##### My public package (on pip) with useful functions i always use
-##### Click [here](https://pypi.org/project/danidisp/#description) for more information
+##### Click [here](https://pypi.org/project/danidisp/) for more information
 ### Installation
 
 ```pip3 install danidisp```
