@@ -66,10 +66,36 @@
   from danidisp import clock
   
   @clock
-  def func():
+  def f():
     # something to do
-  ...
-  func() # 0.1235s <- time to execute func
+  
+  f() # f took 0.1235s <- time to execute func
   ```
 
-- other functions will appear soon...
+- ### Slow Print
+  
+  ```py
+  def sprint(string: str, gap: float = GAP_TIME, new_line: bool = True) -> None:
+  ```
+
+  #### Usage
+  ```py
+  from danidisp import sprint
+  
+  sprint('Hello World!')
+  ```
+
+- ### Slow Input
+  
+  ```py
+  def sinput(prompt: str) -> None:
+  ```
+
+  #### Usage
+  ```py
+  from danidisp import sinput
+  
+  username: str = sinput('Insert your username: ')
+  ```
+
+- #### other functions will appear soon...

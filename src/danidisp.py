@@ -1,4 +1,5 @@
-from time import perf_counter
+from time import perf_counter, sleep
+from sys import stdout
 
 def xor(a: bytes, b: bytes) -> bytes:
     return bytes([x^y for x,y in zip(a,b)])
@@ -45,5 +46,20 @@ def clock(func):
 		start = perf_counter()
 		func()
 		end = perf_counter()
-		print('{0:.8f}'.format(end-start))
+		print('{func.__name__} took {0:.8f}s'.format(end-start))
 	return _clock
+
+GAP_TIME = 0.03
+
+def sprint(string: str, gap: float = GAP_TIME, new_line: bool = True) -> None:
+    for ch in string:
+        stdout.write(ch)
+        stdout.flush()
+        sleep(gap)
+    if ch != '\n' and new_line:
+        stdout.write('\n')
+        stdout.flush()
+
+def sinput(prompt: str) -> str:
+    sprint(prompt, new_line=False)
+    return input()
