@@ -75,7 +75,7 @@
 - ### Slow Print
   
   ```py
-  def sprint(string: str, gap: float = GAP_TIME, new_line: bool = True) -> None:
+  sprint(string: str, gap: float = GAP_TIME, new_line: bool = True) -> None
   ```
 
   #### Usage
@@ -88,7 +88,7 @@
 - ### Slow Input
   
   ```py
-  def sinput(prompt: str) -> None:
+  sinput(prompt: str) -> None
   ```
 
   #### Usage
