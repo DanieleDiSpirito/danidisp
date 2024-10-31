@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="danidisp",
-    version='0.1.1',
+    version='0.1.5',
     description='My own package: every useful function I want to use',
     py_modules=['danidisp'],
     package_dir={'': 'src'},

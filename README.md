@@ -66,10 +66,12 @@
   from danidisp import clock
   
   @clock
-  def f():
+  def sum(a: int, b: int) -> int:
     # something to do
   
-  f() # f took 0.1235s <- time to execute func
+  res = sum(3, 5)
+  assert res[0] == 8
+  print(f'sum takes {res[1]:.8f} seconds') 
   ```
 
 - ### Slow Print

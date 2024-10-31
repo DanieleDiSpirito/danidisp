@@ -40,14 +40,18 @@ def base_conv(n: str, bs: int = 10, be: int = 10) -> str:
         return str(res)
     else:
         return base_conv(base_conv(n, bs, 10), 10, be)
+
+def clock(func, *args, **kwargs):
+    def _clock(*args, **kwargs):
+        start = perf_counter()
+        res = func(*args, **kwargs)
+        end = perf_counter()
+        time = end - start
+        return [res, time]
     
-def clock(func):
-	def _clock():
-		start = perf_counter()
-		func()
-		end = perf_counter()
-		print('{func.__name__} took {0:.8f}s'.format(end-start))
-	return _clock
+    _clock.__doc__ = func.__doc__
+    return _clock
+
 
 GAP_TIME = 0.03
 
